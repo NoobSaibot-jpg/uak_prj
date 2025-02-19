@@ -1,0 +1,61 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+.python-version
+venv/
+venv32/
+env/
+.venv/
+.env/
+
+# Dependencies
+/lib/
+/lib64/
+/include/
+
+# Build and distribution
+build/
+dist/
+*.egg-info/
+*.exe
+
+# Config files
+config.ini
+
+# IDE
+.vscode/
+.idea/
+*.iml
+*.workspace
+
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# Logs and databases
+*.log
+*.sqlite
+*.db
+
+# PyInstaller
+*.spec
+
+# Testing
+.coverage
+htmlcov/
+.pytest_cache/
+
+# Virtual environment
+ENV/
+
+# Local development
+*.swp
+*.swo
+*~
