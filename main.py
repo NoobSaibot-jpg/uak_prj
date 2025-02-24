@@ -30,6 +30,7 @@ class PDFViewerApp:
         self.new_filename = tk.StringVar()
         self.selected_category = tk.StringVar()
         self.convert_to_pdf = tk.BooleanVar(value=False)
+        self.rotation_angle = 0
 
         # Инициализация GUI компонентов
         self.create_widgets()
@@ -80,6 +81,14 @@ class PDFViewerApp:
             text="Конвертувати зображення в PDF",
             variable=self.convert_to_pdf
         )
+        rotate_frame = tk.Frame(control_frame)
+        rotate_frame.pack(pady=5)
+        tk.Button(rotate_frame, text="↺", command=lambda: self.rotate_image(-90)).pack(side=tk.LEFT)
+        tk.Button(rotate_frame, text="↻", command=lambda: self.rotate_image(90)).pack(side=tk.LEFT)
+    
+    def rotate_image(self, angle):
+        self.rotation_angle += angle
+        self.load_preview(os.path.join(self.folder_path, self.files[self.current_index]))
 
     def select_folder(self):
         folder = filedialog.askdirectory(title="Оберіть папку з файлами")
